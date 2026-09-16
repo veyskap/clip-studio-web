@@ -1,0 +1,88 @@
+name: Pages health and self-heal
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages-health-self-heal
+  cancel-in-progress: false
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      SITE_BASE: https://veyskap.github.io/clip-studio-web
+      VERIFY_PATH: /tiktokonmFZmVlU1Mlj4vnk5FHJMpM91iMI95l.txt
+      VERIFY_TEXT: tiktok-developers-site-verification=onmFZmVlU1Mlj4vnk5FHJMpM91iMI95l
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check Pages endpoints
+        id: check
+        shell: bash
+        run: |
+          set +e
+
+          check_once() {
+            echo "Checking Pages endpoints..."
+            curl -fsSL --connect-timeout 10 --max-time 25 "${SITE_BASE}/" >/tmp/home.html || return 1
+            grep -Fq "Veyskap Clip Studio" /tmp/home.html || return 1
+
+            curl -fsSL --connect-timeout 10 --max-time 25 "${SITE_BASE}/privacy.html" >/tmp/privacy.html || return 1
+            grep -Fq "Privacy Policy" /tmp/privacy.html || return 1
+
+            curl -fsSL --connect-timeout 10 --max-time 25 "${SITE_BASE}/terms.html" >/tmp/terms.html || return 1
+            grep -Fq "Terms" /tmp/terms.html || return 1
+
+            actual="$(curl -fsSL --connect-timeout 10 --max-time 25 "${SITE_BASE}${VERIFY_PATH}" | tr -d '\r\n')" || return 1
+            [ "$actual" = "$VERIFY_TEXT" ] || return 1
+
+            return 0
+          }
+
+          for attempt in 1 2 3; do
+            if check_once; then
+              echo "healthy=true" >> "$GITHUB_OUTPUT"
+              echo "All Pages endpoints are healthy."
+              exit 0
+            fi
+            echo "Attempt ${attempt}/3 failed."
+            sleep 20
+          done
+
+          echo "healthy=false" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Force Pages redeploy after repeated failure
+        if: steps.check.outputs.healthy != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf 'Last automatic recovery trigger: %s\n' "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" > .pages-keepalive
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .pages-keepalive
+          git commit -m "chore: auto-recover GitHub Pages" || true
+          git push origin HEAD:main
+
+      - name: Recheck after recovery deploy window
+        if: steps.check.outputs.healthy != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          sleep 60
+
+          curl -fsSL --connect-timeout 10 --max-time 25 "${SITE_BASE}/" | grep -Fq "Veyskap Clip Studio"
+          curl -fsSL --connect-timeout 10 --max-time 25 "${SITE_BASE}/privacy.html" | grep -Fq "Privacy Policy"
+          curl -fsSL --connect-timeout 10 --max-time 25 "${SITE_BASE}/terms.html" | grep -Fq "Terms"
+          actual="$(curl -fsSL --connect-timeout 10 --max-time 25 "${SITE_BASE}${VERIFY_PATH}" | tr -d '\r\n')"
+          test "$actual" = "$VERIFY_TEXT"
+          echo "Pages recovered and TikTok verification file is valid."

@@ -3,200 +3,262 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#08070d">
-  <meta name="description" content="Veyskap Clip Studio is an AI-assisted Windows desktop workflow for turning long livestreams into creator-approved clips and long-form content.">
+  <meta name="theme-color" content="#0b0b0d">
+  <meta name="description" content="Veyskap Clip Studio is an AI-assisted Windows desktop workflow for turning livestream recordings into creator-approved short-form and long-form content.">
   <meta property="og:title" content="Veyskap Clip Studio">
-  <meta property="og:description" content="From long livestream to publish-ready content — with the creator in control.">
+  <meta property="og:description" content="AI-assisted video workflow for streamers and creators.">
   <meta property="og:type" content="website">
-  <title>Veyskap Clip Studio · AI Creator Workflow</title>
+  <title>Veyskap Clip Studio — AI video workflow for creators</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="ambient ambient-one"></div>
-  <div class="ambient ambient-two"></div>
-  <div class="noise"></div>
-
-  <header>
-    <div class="wrap">
-      <nav>
-        <a class="brand" href="./" aria-label="Veyskap Clip Studio home">
-          <span class="brand-mark">V</span>
-          <span>VEYSKAP <strong>CLIP STUDIO</strong></span>
-        </a>
-        <div class="navlinks">
-          <a href="#workflow">Workflow</a>
-          <a href="#features">Features</a>
-          <a href="#integrations">Integrations</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="terms.html">Terms</a>
-        </div>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="./" aria-label="Veyskap Clip Studio home">
+        <span class="brand-symbol" aria-hidden="true">V</span>
+        <span class="brand-copy">Veyskap <b>Clip Studio</b></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#product">Product</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#integrations">Integrations</a>
+        <a href="privacy.html">Privacy</a>
       </nav>
+      <a class="nav-cta" href="https://github.com/veyskap">GitHub</a>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow"><span class="status-dot"></span> AI-assisted creator workflow</div>
-          <h1>One livestream.<br><span class="gradient-text">Every format.</span></h1>
-          <p class="lead">
-            Veyskap Clip Studio turns long-form livestream recordings into structured,
-            reviewable content — from highlight discovery and vertical clips to edited
-            long-form videos and connected publishing.
-          </p>
-          <div class="cta">
-            <a class="btn primary" href="#workflow">Explore the workflow</a>
-            <a class="btn ghost" href="privacy.html">Privacy & OAuth</a>
-          </div>
-          <div class="trust-row">
-            <span><b>Local-first</b> desktop workflow</span>
-            <span><b>Creator-approved</b> publishing</span>
-            <span><b>Official OAuth</b> connections</span>
-          </div>
+      <div class="container hero-inner">
+        <div class="hero-badge"><span></span> Windows desktop creator workflow</div>
+        <h1>From livestream to<br><em>publish-ready content.</em></h1>
+        <p class="hero-copy">
+          Veyskap Clip Studio helps creators understand long recordings, find the moments that matter,
+          prepare short-form and long-form edits, and review everything before publishing.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#product">See the product</a>
+          <a class="button button-secondary" href="privacy.html">Privacy & OAuth</a>
         </div>
+        <div class="hero-proof">
+          <span>Local-first workflow</span>
+          <i></i>
+          <span>Creator-approved publishing</span>
+          <i></i>
+          <span>Official OAuth connections</span>
+        </div>
+      </div>
+    </section>
 
-        <div class="app-shell" aria-label="Veyskap Clip Studio interface preview">
-          <div class="window-bar">
-            <div class="window-dots"><i></i><i></i><i></i></div>
-            <span>Veyskap Clip Studio</span>
-            <span class="live-pill">PROJECT LIVE</span>
+    <section id="product" class="product-stage">
+      <div class="container">
+        <div class="product-frame">
+          <div class="product-topbar">
+            <div class="traffic"><span></span><span></span><span></span></div>
+            <div class="product-title">Veyskap Clip Studio</div>
+            <div class="project-status"><span></span> Project active</div>
           </div>
-          <div class="app-body">
-            <aside class="app-sidebar">
-              <div class="mini-logo">V</div>
-              <span class="active"></span><span></span><span></span><span></span><span></span>
+
+          <div class="product-app">
+            <aside class="product-sidebar">
+              <div class="sidebar-logo">V</div>
+              <div class="sidebar-group">
+                <small>WORKSPACE</small>
+                <a class="selected" href="#product"><span>◫</span> Dashboard</a>
+                <a href="#product"><span>◈</span> Projects</a>
+                <a href="#product"><span>⌁</span> AI Editor</a>
+                <a href="#product"><span>↗</span> Publisher</a>
+              </div>
+              <div class="sidebar-group lower">
+                <small>TOOLS</small>
+                <a href="#product"><span>◎</span> Integrations</a>
+                <a href="#product"><span>⚙</span> Settings</a>
+              </div>
             </aside>
-            <div class="app-main">
-              <div class="preview-top">
+
+            <div class="product-content">
+              <div class="workspace-head">
                 <div>
                   <small>ACTIVE PROJECT</small>
-                  <h3>Livestream Session</h3>
+                  <h2>Livestream Session — Long-form Edit</h2>
                 </div>
-                <div class="ai-badge">AI ANALYSIS</div>
+                <div class="workspace-actions">
+                  <span class="ready-chip">Analysis complete</span>
+                  <button type="button">Review edit</button>
+                </div>
               </div>
-              <div class="video-frame">
-                <div class="frame-glow"></div>
-                <div class="play-mark">V</div>
-                <div class="scan-line"></div>
-                <div class="frame-caption"><span></span> Detecting moments, reactions & scenes</div>
+
+              <div class="workspace-grid">
+                <div class="video-panel">
+                  <div class="video-surface">
+                    <div class="video-grid-lines"></div>
+                    <div class="video-center">
+                      <span class="video-mark">V</span>
+                      <b>Creator preview</b>
+                      <small>16:9 source</small>
+                    </div>
+                    <div class="video-overlay top-left">AI EDITOR</div>
+                    <div class="video-overlay bottom-left"><span></span> Scene 24 · reaction detected</div>
+                  </div>
+                  <div class="transport">
+                    <span>00:48:12</span>
+                    <div class="transport-line"><b></b></div>
+                    <span>02:06:41</span>
+                  </div>
+                </div>
+
+                <aside class="analysis-panel">
+                  <div class="analysis-head">
+                    <div><small>AI ANALYSIS</small><strong>Project intelligence</strong></div>
+                    <span class="analysis-state">Ready</span>
+                  </div>
+                  <div class="analysis-card">
+                    <span class="analysis-icon">01</span>
+                    <div><strong>Natural intro</strong><small>Creator greeting detected</small></div>
+                    <em>00:15</em>
+                  </div>
+                  <div class="analysis-card active-card">
+                    <span class="analysis-icon">02</span>
+                    <div><strong>High-energy moment</strong><small>Reaction + scene change</small></div>
+                    <em>00:38</em>
+                  </div>
+                  <div class="analysis-card">
+                    <span class="analysis-icon">03</span>
+                    <div><strong>Short candidate</strong><small>Vertical-ready segment</small></div>
+                    <em>00:27</em>
+                  </div>
+                  <div class="analysis-summary">
+                    <div><strong>24</strong><span>moments</span></div>
+                    <div><strong>08</strong><span>shorts</span></div>
+                    <div><strong>01</strong><span>long-form</span></div>
+                  </div>
+                </aside>
               </div>
-              <div class="timeline">
-                <div class="timeline-head"><span>SMART TIMELINE</span><span>01:42:18</span></div>
-                <div class="track"><b class="seg s1"></b><b class="seg s2"></b><b class="seg s3"></b><b class="seg s4"></b></div>
-                <div class="events"><i></i><i></i><i></i><i></i><i></i></div>
-              </div>
-              <div class="metric-grid">
-                <div><strong>24</strong><span>moments</span></div>
-                <div><strong>9:16</strong><span>shorts ready</span></div>
-                <div><strong>16:9</strong><span>long-form</span></div>
+
+              <div class="timeline-panel">
+                <div class="timeline-title">
+                  <div><small>SMART TIMELINE</small><strong>Creator-approved edit structure</strong></div>
+                  <span>Zoom 100%</span>
+                </div>
+                <div class="timeline-ruler"><span>00:00</span><span>30:00</span><span>60:00</span><span>90:00</span><span>120:00</span></div>
+                <div class="timeline-track track-video">
+                  <label>VIDEO</label>
+                  <div class="clip c1">Intro</div><div class="clip c2">Main edit</div><div class="clip c3">Reaction</div><div class="clip c4">Main edit</div><div class="clip c5">Outro</div>
+                </div>
+                <div class="timeline-track track-ai">
+                  <label>AI</label>
+                  <div class="marker m1"></div><div class="marker m2"></div><div class="marker m3"></div><div class="marker m4"></div><div class="marker m5"></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="logo-strip">
-      <div class="wrap">
-        <span>DESIGNED FOR MODERN CREATOR WORKFLOWS</span>
-        <div class="platform-inline">
-          <b>TikTok</b><b>YouTube</b><b>Instagram</b><b>Kick</b>
+        <div class="capability-row" aria-label="Core capabilities">
+          <span>Transcript understanding</span>
+          <span>Scene detection</span>
+          <span>Highlight discovery</span>
+          <span>Short-form preparation</span>
+          <span>Long-form assembly</span>
+          <span>Connected publishing</span>
         </div>
       </div>
     </section>
 
-    <section id="workflow" class="section workflow-section">
-      <div class="wrap">
-        <div class="section-kicker">FROM RAW VOD TO FINISHED CONTENT</div>
-        <h2>A full creator pipeline, not just a clip finder.</h2>
-        <p class="section-lead">The workflow keeps analysis, editing decisions and publishing approval in one place.</p>
+    <section id="workflow" class="section section-light">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">A complete workflow</span>
+          <h2>Built around the creator,<br>not around automation for its own sake.</h2>
+          <p>AI accelerates the repetitive parts. Editorial control stays with the person publishing the content.</p>
+        </div>
 
-        <div class="workflow">
-          <article><span>01</span><div><h3>Understand</h3><p>Transcript, scenes, reactions and semantic context.</p></div></article>
-          <article><span>02</span><div><h3>Detect</h3><p>Surface candidate highlights, cold opens and memorable moments.</p></div></article>
-          <article><span>03</span><div><h3>Edit</h3><p>Prepare shorts and structured long-form edits for review.</p></div></article>
-          <article><span>04</span><div><h3>Review</h3><p>The creator chooses what stays, what changes and what ships.</p></div></article>
-          <article><span>05</span><div><h3>Publish</h3><p>Send approved content through supported connected platforms.</p></div></article>
+        <div class="process-grid">
+          <article><span>01</span><h3>Understand</h3><p>Transcripts, scenes, reactions and context are organized into a usable project view.</p></article>
+          <article><span>02</span><h3>Discover</h3><p>Candidate highlights, hooks and short-form moments are surfaced for review.</p></article>
+          <article><span>03</span><h3>Edit</h3><p>Short-form and long-form structures are prepared without hiding the underlying editorial decisions.</p></article>
+          <article><span>04</span><h3>Approve</h3><p>The creator reviews, changes, skips or approves the output before any publishing action.</p></article>
         </div>
       </div>
     </section>
 
-    <section id="features" class="section">
-      <div class="wrap">
-        <div class="section-kicker">CREATOR CONTROLLED</div>
-        <h2>AI does the heavy lifting.<br>You keep the final say.</h2>
-        <div class="grid feature-grid">
-          <article class="card feature-card featured">
-            <div class="card-icon">AI</div>
-            <h3>Context-aware highlight detection</h3>
-            <p>Analyze long recordings and identify reactions, scenes, high-energy moments and useful story beats instead of blindly cutting on volume spikes.</p>
-            <div class="card-lines"><i></i><i></i><i></i><i></i></div>
+    <section class="section section-dark feature-section">
+      <div class="container">
+        <div class="section-heading inverse">
+          <span class="eyebrow">Product principles</span>
+          <h2>Professional tooling for<br>serious creator workflows.</h2>
+        </div>
+
+        <div class="bento-grid">
+          <article class="bento bento-large">
+            <div class="bento-label">Context-aware AI</div>
+            <h3>Find the moment because it matters, not because it is loud.</h3>
+            <p>Veyskap Clip Studio is designed around semantic context, scenes and creator reactions rather than simple volume thresholds.</p>
+            <div class="signal-viz">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <i></i><b></b>
+            </div>
           </article>
-          <article class="card feature-card">
-            <div class="card-icon">9:16</div>
-            <h3>Short-form preparation</h3>
-            <p>Prepare vertical clip candidates, captions, titles and metadata while keeping review inside the desktop workflow.</p>
+          <article class="bento">
+            <div class="bento-label">Human review</div>
+            <h3>No silent publishing.</h3>
+            <p>Account connections support creator-authorized workflows. Review comes before release.</p>
+            <div class="approval-card"><span>Ready for review</span><button type="button">Approve</button></div>
           </article>
-          <article class="card feature-card">
-            <div class="card-icon">16:9</div>
-            <h3>Long-form assembly</h3>
-            <p>Structure edited main videos with intros, outros, chapters and optional cinematic elements without replacing creator judgment.</p>
-          </article>
-          <article class="card feature-card wide">
-            <div class="card-icon">OK</div>
-            <h3>Human approval before publishing</h3>
-            <p>Connected accounts are used only for creator-authorized actions. The application does not silently publish content or request social-platform passwords.</p>
+          <article class="bento">
+            <div class="bento-label">Multiple formats</div>
+            <h3>One source, different outputs.</h3>
+            <p>Prepare vertical clips and structured long-form edits from the same project.</p>
+            <div class="formats"><div class="portrait">9:16</div><div class="landscape">16:9</div></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="integrations" class="section integrations-section">
-      <div class="wrap integration-panel">
+    <section id="integrations" class="section section-light integrations">
+      <div class="container integration-grid">
+        <div class="section-heading compact">
+          <span class="eyebrow">Connected platforms</span>
+          <h2>Official connections.<br>Clear permissions.</h2>
+          <p>Supported platform capabilities depend on API access and review requirements. Veyskap Clip Studio uses official authorization flows and does not ask for social-platform passwords.</p>
+          <a class="text-link" href="privacy.html">Read the privacy policy <span>→</span></a>
+        </div>
+        <div class="platform-list">
+          <div><span class="platform-icon">TT</span><div><strong>TikTok</strong><small>OAuth · account identity · creator-approved posting</small></div><em>API</em></div>
+          <div><span class="platform-icon">YT</span><div><strong>YouTube</strong><small>Connected creator publishing workflow</small></div><em>API</em></div>
+          <div><span class="platform-icon">IG</span><div><strong>Instagram</strong><small>Supported publishing capabilities when available</small></div><em>API</em></div>
+          <div><span class="platform-icon">K</span><div><strong>Kick</strong><small>Livestream-oriented creator workflow</small></div><em>LIVE</em></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-section">
+      <div class="container closing-card">
         <div>
-          <div class="section-kicker">CONNECTED PUBLISHING</div>
-          <h2>Built to work with the platforms creators already use.</h2>
-          <p>Supported integrations may include TikTok, YouTube, Instagram and Kick. Availability depends on platform API permissions and review requirements.</p>
-          <div class="notice">Veyskap Clip Studio uses official OAuth flows and does not ask for or store social-platform passwords.</div>
+          <span class="eyebrow">Veyskap Clip Studio</span>
+          <h2>Less time sorting footage.<br>More time creating.</h2>
         </div>
-        <div class="integration-orbit" aria-hidden="true">
-          <div class="orbit-ring ring-one"></div>
-          <div class="orbit-ring ring-two"></div>
-          <div class="orbit-core">V</div>
-          <div class="orbit-item item-one">YT</div>
-          <div class="orbit-item item-two">TT</div>
-          <div class="orbit-item item-three">IG</div>
-          <div class="orbit-item item-four">K</div>
+        <div class="closing-actions">
+          <a class="button button-primary light-button" href="privacy.html">Privacy practices</a>
+          <a class="button button-dark-outline" href="terms.html">Terms of Service</a>
         </div>
-      </div>
-    </section>
-
-    <section class="section final-cta">
-      <div class="wrap final-card">
-        <div class="glow-orb"></div>
-        <div>
-          <span class="section-kicker">VEYSKAP CLIP STUDIO</span>
-          <h2>Less sorting. More creating.</h2>
-          <p>An AI-assisted Windows workflow for creators who want speed without giving up control.</p>
-        </div>
-        <a class="btn primary" href="privacy.html">View privacy practices</a>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="wrap footer-grid">
-      <div>
-        <a class="brand footer-brand" href="./"><span class="brand-mark">V</span><span>VEYSKAP <strong>CLIP STUDIO</strong></span></a>
-        <p>AI-assisted creator workflow for Windows.</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand-wrap">
+        <a class="brand" href="./"><span class="brand-symbol">V</span><span class="brand-copy">Veyskap <b>Clip Studio</b></span></a>
+        <p>AI-assisted Windows workflow for creators.</p>
       </div>
       <div class="footer-links">
-        <a href="terms.html">Terms of Service</a>
         <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
         <a href="https://github.com/veyskap">GitHub</a>
       </div>
-      <div class="copyright">© 2026 Veyskap Clip Studio.<br>All rights reserved.</div>
+      <div class="footer-copy">© 2026 Veyskap Clip Studio</div>
     </div>
   </footer>
 </body>

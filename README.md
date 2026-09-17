@@ -7,16 +7,19 @@ Files:
 - `terms.html`
 - `privacy.html`
 - `styles.css`
+- `tiktokonmFZmVlU1Mlj4vnk5FHJMpM91iMI95l.txt`
 
-Recommended GitHub Pages setup:
-1. Create a public repository named `clip-studio`.
-2. Upload these files to the repository root.
-3. In GitHub: Settings → Pages.
-4. Source: Deploy from a branch.
-5. Branch: `main`, folder: `/ (root)`.
-6. Save.
+GitHub Pages setup:
+1. Repository: `veyskap/clip-studio-web`
+2. In GitHub: Settings → Pages.
+3. Source: Deploy from a branch.
+4. Branch: `main`, folder: `/ (root)`.
+5. Save.
 
-Expected URLs:
-- https://veyskap.github.io/clip-studio/
-- https://veyskap.github.io/clip-studio/terms.html
-- https://veyskap.github.io/clip-studio/privacy.html
+Live URLs:
+- https://veyskap.github.io/clip-studio-web/
+- https://veyskap.github.io/clip-studio-web/terms.html
+- https://veyskap.github.io/clip-studio-web/privacy.html
+- https://veyskap.github.io/clip-studio-web/tiktokonmFZmVlU1Mlj4vnk5FHJMpM91iMI95l.txt
+
+The repository also includes a scheduled GitHub Actions health check that verifies the homepage, legal pages, and TikTok site-verification file.
